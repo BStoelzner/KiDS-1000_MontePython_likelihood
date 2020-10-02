@@ -35,8 +35,10 @@ data.parameters['A_IA']  = [1.0,	   -6.0,    6.0,    1.0,    1, 'nuisance']
 
 # parameters for baryon feedback with 'hmcode':
 data.parameters['c_min'] = [2.6,    2.,     3.13,    1.,     1, 'cosmo']
-data.cosmo_arguments['a_0'] = 0.98
-data.cosmo_arguments['a_1'] = -0.12
+# Define a_0 and a_1 as fixed cosmological parameters which are used to
+# calculate eta_0 (eq. 30 in Mead et al. 2015)
+data.parameters['a_0']   = [0.98,   0.5,    1,       0,      1, 'cosmo']
+data.parameters['a_1']   = [-0.12,  -0.3,   0.3,     0,      1, 'cosmo']
 
 ### Delta-z parameters ###
 data.parameters['D_z1'] = [ 0.,	      -5., 5., 0.01, 1, 'nuisance']

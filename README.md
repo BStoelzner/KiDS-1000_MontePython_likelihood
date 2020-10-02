@@ -12,7 +12,7 @@ Assuming that KCAP and MontePython (with CLASS version >= 2.8 including the HMco
 
 2) Set the path to the data folder (i.e. `KiDS-1000_DATA_RELEASE` from the tarball available from the [KiDS science data webpage](http://kids.strw.leidenuniv.nl/sciencedata.php') in `K1K_[COSEBIs, BandPowers, or CorrelationFunctions].data` and modify parameters as you please (note that everything is set up to reproduce the fiducial run with `K1K_[COSEBIs, BandPowers, or CorrelationFunctions].param`).
 
-3) Start your runs using e.g. the `K1K_COSEBIs.param` supplied in the subfolder `INPUT`.
+3) Start your runs using e.g. the `K1K.param` supplied in the subfolder `INPUT`.
 
 4) If you publish your results based on using this likelihood, please cite [Asgari et al. 2020 (arXiv:2007.15633)](https://ui.adsabs.harvard.edu/abs/2020arXiv200715633A) and all further references for the KiDS-1000 data release (as listed on the [KiDS science data webpage](http://kids.strw.leidenuniv.nl/sciencedata.php)) and also all relevant references for KCAP, Monte Python and CLASS.
 
@@ -34,7 +34,7 @@ if elem == 'S_8':
     del self.cosmo_arguments[elem]
 ```
 In HMcode you can specify a baryonic feedback model which depends on two parameters: the minimum concentration "c_min" from the and the halo bloating parameter "eta_0". These can be related via eta_0 = a_0 + a_1 * c_min  (eq.30 in [Mead et al. 2015](https://ui.adsabs.harvard.edu/abs/2015MNRAS.454.1958M)). For the fiducial KiDS-1000 analysis we use a_0 = 0.98 and a_1 = -0.12.
-Class currently doesn't a_0 and a_1 as input parameters, so you need to add the following lines to `/your/path/to/montepython_public/montepython/data.py` in order to calculate eta_0 which is then passed to Class:
+Class currently doesn't support a_0 and a_1 as input parameters, so you need to add the following lines to `/your/path/to/montepython_public/montepython/data.py` in order to calculate eta_0 from a_0, a_1, and c_min which is then passed to Class:
 ```python
 if elem == 'c_min':
     c_min = self.cosmo_arguments['c_min']
@@ -51,6 +51,6 @@ if elem == 'c_min':
     del self.cosmo_arguments['a_0']
     del self.cosmo_arguments['a_1']
 ```
-Note: a_0 and a_1 are defined in K1K.param as fixed cosmological parameters. 
+Note: a_0 and a_1 are defined in K1K.param as fixed cosmological parameters.
 
 WARNING: This likelihood only produces valid results for `\Omega_k = 0`, i.e. flat cosmologies!
