@@ -51,6 +51,6 @@ if elem == 'c_min':
     del self.cosmo_arguments['a_0']
     del self.cosmo_arguments['a_1']
 ```
-Note: a_0 and a_1 need to be defined defined in the parameter file (e.g.`INPUT/K1K.param`) as *fixed* cosmological parameters.
+Note: a_0 and a_1 need to be defined defined in the parameter file (e.g.`INPUT/K1K.param`) as **fixed** cosmological parameters.
 
 WARNING: This likelihood only produces valid results for `\Omega_k = 0`, i.e. flat cosmologies!
