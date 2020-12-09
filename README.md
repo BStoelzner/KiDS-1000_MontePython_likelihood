@@ -34,7 +34,9 @@ if elem == 'S_8':
     del self.cosmo_arguments[elem]
 ```
 In HMcode you can specify a baryonic feedback model which depends on two parameters: the minimum concentration "c_min" from the and the halo bloating parameter "eta_0". These can be related via eta_0 = a_0 + a_1 * c_min  (eq.30 in [Mead et al. 2015](https://ui.adsabs.harvard.edu/abs/2015MNRAS.454.1958M)). For the fiducial KiDS-1000 analysis we use a_0 = 0.98 and a_1 = -0.12.
-Class currently doesn't support a_0 and a_1 as input parameters, so you need to add the following lines to `/your/path/to/montepython_public/montepython/data.py` in order to calculate eta_0 from a_0, a_1, and c_min.
+Class currently doesn't support a_0 and a_1 as input parameters, but instead uses some hardcoded values (see line 2906 in https://github.com/lesgourg/class_public/blob/master/source/input.c). These values are equivalent to the ones used in the fiducial KiDS-1000 analysis.
+
+If you want to change the values of a_0 and a_1, you need to add the following lines to `/your/path/to/montepython_public/montepython/data.py` in order to calculate eta_0 from a_0, a_1, and c_min.
 ```python
 if elem == 'c_min':
     c_min = self.cosmo_arguments['c_min']
@@ -50,6 +52,11 @@ if elem == 'c_min':
     self.cosmo_arguments['eta_0'] = a_0 + a_1 * c_min
     del self.cosmo_arguments['a_0']
     del self.cosmo_arguments['a_1']
+```
+You can then set the values of a_0 and a_1 by adding the following lines to the .param file:
+```python
+data.parameters['a_0']   = [0.98,   0.5,    1,       0,      1, 'cosmo']
+data.parameters['a_1']   = [-0.12,  -0.3,   0.3,     0,      1, 'cosmo']
 ```
 Note: a_0 and a_1 need to be defined defined in the parameter file (e.g.`INPUT/K1K.param`) as **fixed** cosmological parameters.
 
