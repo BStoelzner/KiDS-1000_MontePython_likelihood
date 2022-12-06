@@ -1,7 +1,7 @@
 #####################################################################
-# Data and precision parameters for the KiDS-1000 cosmic shear band #
-# powers likelihood to be used with data from K1K et al. 2020       #
-# (arXiv:20XX.YYYY) available from:                                 #
+# Data and precision parameters for the KiDS-1000 2PCF likelihood   #
+# to be used with data from Asgari et al. 2020 (arXiv:2007.15633)   #
+# available from:                                                   #
 #                                                                   #
 # http://kids.strw.leidenuniv.nl/sciencedata.php                    #
 #                                                                   #
@@ -15,7 +15,7 @@
 ## DATA LOCATION ##
 
 # set the path to the main data-folder:
-K1K_CorrelationFunctions.data_directory = '/your/path/to/KiDS-1000_DATA_RELEASE/'
+K1K_CorrelationFunctions.data_directory = data.path['data']
 
 # set the path to the main folder of KCAP:
 # (this is required for importing the cosebis and scale_cuts modules )
@@ -24,7 +24,7 @@ K1K_CorrelationFunctions.kcap_directory = '/your/path/to/KCAP/'
 # for loading of files:
 
 # set name of FITS file containing all data (within data_directory):
-K1K_CorrelationFunctions.data_file = 'xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits'
+K1K_CorrelationFunctions.data_file = 'KiDS-1000/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits'
 
 ## CorrelationFunctions PARAMETERS ##
 
@@ -59,7 +59,7 @@ K1K_CorrelationFunctions.nzmax = 120
 # you can choose here any of the scipy.interpolate.interp1d types of interpolation
 # (i.e. 'linear', 'nearest', 'zero', 'slinear', 'quadratic', 'cubic', 'previous',
 # 'next' in SciPy v1.1.0) for the n(z) interpolation ('linear' is recommended)
-# for fiducial KV450 analysis: 'linear'
+# for fiducial KiDS-1000 analysis: 'cubic'
 K1K_CorrelationFunctions.type_redshift_interp = 'cubic'
 
 ## SCALE CUTS ##
@@ -120,7 +120,7 @@ K1K_CorrelationFunctions.write_out_Cls = False
 # 2) 'hmcode' (Mead et al. 2015, 2016)
 # the choice between the two affects also the choice of the baryon feedback
 # modelling further below!
-# for fiducial KV450 analysis: 'hmcode'
+# for fiducial KiDS-1000 analysis: 'hmcode'
 K1K_CorrelationFunctions.method_non_linear_Pk = 'hmcode'
 
 # scale k_max (in h/Mpc) up to which the non-linear corrections (of the matter
@@ -161,7 +161,7 @@ K1K_CorrelationFunctions.nonlinear_min_k_max = 20.
 # mean of the linear and non-linear matter power spectre will be used
 # if set to False, the non-linear matter power spectrum will be used for both
 # the II and GI term instead
-# for fiducial KV450 analysis: False
+# for fiducial KiDS-1000 analysis: False
 K1K_CorrelationFunctions.use_linear_pk_for_IA = False
 
 ## SHIFTS OF N(Z) ##
@@ -188,14 +188,13 @@ K1K_CorrelationFunctions.use_gaussian_prior_for_nuisance = True
 
 # add here all NUISANCE parameters for which you would like to define Gaussian priors:
 # names must match exactly to the nusiances defined above!
-#K1K_CorrelationFunctions.gaussian_prior_name = ['delta_c','D_z1', 'D_z2', 'D_z3', 'D_z4', 'D_z5']
-K1K_CorrelationFunctions.gaussian_prior_name = ['delta_c']
+K1K_CorrelationFunctions.gaussian_prior_name = ['delta_c','D_z1', 'D_z2', 'D_z3', 'D_z4', 'D_z5']
 
 # supply here the central values of the Gaussians (keep the order! no double checks!!!)
-# for fiducial KV450 analysis: [0., 0., 0., 0., 0.]
-#K1K_CorrelationFunctions.gaussian_prior_center = [0., 0., 0.181, 1.110, 1.359, -1.265]
-K1K_CorrelationFunctions.gaussian_prior_center = [0.]
+# for fiducial KiDS-1000 analysis: [0., 0., 0.181, 1.110, 1.359, -1.265]
+K1K_CorrelationFunctions.gaussian_prior_center = [0., 0., 0.181, 1.110, 1.359, -1.265]
+
 # supply here the std wrt. the center (again keep the order!)
-# for fiducial KV450 analysis: [0.039, 0.023, 0.026, 0.012, 0.011]
-#K1K_CorrelationFunctions.gaussian_prior_sigma = [7.5e-8, 1., 1., 1., 1., 1.]
-K1K_CorrelationFunctions.gaussian_prior_sigma = [7.5e-8]
+# for fiducial KiDS-1000 analysis: [7.5e-8, 1., 1., 1., 1., 1.]
+K1K_CorrelationFunctions.gaussian_prior_sigma = [7.5e-8, 1., 1., 1., 1., 1.]
+
