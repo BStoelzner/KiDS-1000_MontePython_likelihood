@@ -15,7 +15,7 @@
 ## DATA LOCATION ##
 
 # set the path to the main data-folder:
-K1K_BandPowers.data_directory = data.path['data']
+K1K_BandPowers.data_directory = data.path['data'] + '/KiDS-1000'
 
 # set the path to the main folder of KCAP:
 # (this is required for importing the cosebis and scale_cuts modules )
@@ -24,7 +24,7 @@ K1K_BandPowers.kcap_directory = '/your/path/to/KCAP/'
 # for loading of files:
 
 # set name of FITS file containing all data (within data_directory):
-K1K_BandPowers.data_file = 'KiDS-1000/bp_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits'
+K1K_BandPowers.data_file = 'bp_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits'
 
 ## BandPowers PARAMETERS ##
 
@@ -181,8 +181,8 @@ K1K_BandPowers.gaussian_prior_name = ['D_z1', 'D_z2', 'D_z3', 'D_z4', 'D_z5']
 
 # supply here the central values of the Gaussians (keep the order! no double checks!!!)
 # for fiducial KiDS-1000 analysis: [0., 0.181, 1.110, 1.395, -1.265]
-K1K_COSEBIs.gaussian_prior_center = [0., 0.181, 1.110, 1.395, -1.265]
+K1K_BandPowers.gaussian_prior_center = [0., 0.181, 1.110, 1.395, -1.265]
 
 # supply here the std wrt. the center (again keep the order!)
 # for fiducial KiDS-1000 analysis: [1., 1., 1., 1., 1.]
-K1K_COSEBIs.gaussian_prior_sigma = [1., 1., 1., 1., 1.]
+K1K_BandPowers.gaussian_prior_sigma = [1., 1., 1., 1., 1.]

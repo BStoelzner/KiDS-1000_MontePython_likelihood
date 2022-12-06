@@ -42,6 +42,8 @@ data.parameters['D_z2'] = [ 0.181,    -5., 5., 0.01, 1, 'nuisance']
 data.parameters['D_z3'] = [ 1.110,    -5., 5., 0.01, 1, 'nuisance']
 data.parameters['D_z4'] = [ 1.395,    -5., 5., 0.01, 1, 'nuisance']
 data.parameters['D_z5'] = [ -1.265,  -5., 5., 0.01, 1, 'nuisance']
+# delta_c is only required for 2PCFs
+# data.parameters['delta_c'] = [ 0,       -3.75e-7, 3.75e-7, 0.01, 1, 'nuisance']
 
 # Derived parameters:
 data.parameters['Omega_m']      = [1, None, None, 0, 1, 'derived']

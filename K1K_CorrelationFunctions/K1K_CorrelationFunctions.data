@@ -15,7 +15,7 @@
 ## DATA LOCATION ##
 
 # set the path to the main data-folder:
-K1K_CorrelationFunctions.data_directory = data.path['data']
+K1K_CorrelationFunctions.data_directory = data.path['data'] + '/KiDS-1000'
 
 # set the path to the main folder of KCAP:
 # (this is required for importing the cosebis and scale_cuts modules )
@@ -24,7 +24,7 @@ K1K_CorrelationFunctions.kcap_directory = '/your/path/to/KCAP/'
 # for loading of files:
 
 # set name of FITS file containing all data (within data_directory):
-K1K_CorrelationFunctions.data_file = 'KiDS-1000/xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits'
+K1K_CorrelationFunctions.data_file = 'xipm_KIDS1000_BlindC_with_m_bias_V1.0.0A_ugriZYJHKs_photoz_SG_mask_LF_svn_309c_2Dbins_v2_goldclasses_Flag_SOM_Fid.fits'
 
 ## CorrelationFunctions PARAMETERS ##
 
@@ -77,7 +77,7 @@ K1K_CorrelationFunctions.xip_theta_min = 0.5
 K1K_CorrelationFunctions.xip_theta_max = 300.0
 K1K_CorrelationFunctions.xip_nTheta = 9
 K1K_CorrelationFunctions.xip_weighted_binning = 1
-K1K_CorrelationFunctions.xip_InputNpair = '/share/splinter/stolzner/kids/montepython_public/data/K1K/npairs/XI_V1_4000'
+K1K_CorrelationFunctions.xip_InputNpair = data.path['data'] + '/KiDS-1000/npairs/XI_V1_4000'
 K1K_CorrelationFunctions.xip_InputNpair_suffix = '.ascii'
 K1K_CorrelationFunctions.xip_Column_theta = 1
 K1K_CorrelationFunctions.xip_Column_Npair = 11
@@ -93,7 +93,7 @@ K1K_CorrelationFunctions.xim_theta_min = 0.5
 K1K_CorrelationFunctions.xim_theta_max = 300.0
 K1K_CorrelationFunctions.xim_nTheta = 9
 K1K_CorrelationFunctions.xim_weighted_binning = 1
-K1K_CorrelationFunctions.xim_InputNpair = '/share/splinter/stolzner/kids/montepython_public/data/K1K/npairs/XI_V1_4000'
+K1K_CorrelationFunctions.xim_InputNpair = data.path['data'] + '/KiDS-1000/npairs/XI_V1_4000'
 K1K_CorrelationFunctions.xim_InputNpair_suffix = '.ascii'
 K1K_CorrelationFunctions.xim_Column_theta = 1
 K1K_CorrelationFunctions.xim_Column_Npair = 11
