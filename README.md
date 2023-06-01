@@ -1,3 +1,5 @@
+### Note: The KiDS-1000 likelihood modules for COSEBIs, BandPowers, and 2PCFs and the corresponding data files have been added to the [MontePython v3.6.0 repository](https://github.com/brinckmann/montepython_public). These likelihoods should work out of the box provided that [KCAP](https://github.com/KiDS-WL/kcap) has been set up.
+
 This repository contains the likelihood modules for the KiDS-1000 (in short: K1K) COSEBIs, Bandpowers, and 2-point correlation function measurements from [Asgari et al. 2020 (arXiv:2007.15633)](https://ui.adsabs.harvard.edu/abs/2020arXiv200715633A).
 The module will be working 'out-of-the-box' within a KCAP setup and an additional install of [MontePython](https://github.com/brinckmann/montepython_public) and [CLASS](https://github.com/lesgourg/class_public) (version >= 2.8 including the HMcode module) setup. The required KiDS-1000 data files can be downloaded from the [KiDS science data webpage](http://kids.strw.leidenuniv.nl/sciencedata.php) and the parameter file for reproducing the fiducial run of [Asgari et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv200715633A) is supplied in the subfolder `INPUT`.
 
